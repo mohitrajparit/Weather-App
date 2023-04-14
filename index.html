@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="weather-icon-removebg-preview.png" type="image/x-icon">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Weather APP <img src="weather-icon-removebg-preview.png" alt="weather-icon" width="7%"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">How to use?</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-3">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Weather for <span id="cityName"></span></h1>
+        </div>
+    
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 ">
+                <h4 class="my-0 fw-normal">Temperature</h4>
+              </div>
+              <div class="card-body">
+             <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-muted fw-light"><span> &#8451;</span></small></h1>
+                <ul class="list-unstyled mt-3 mb-4"> 
+                  <li>Temperature is <span id="temp"></span></li>
+                  <li>Min Temperature is <span id="min_temp"></span></li>
+                  <li>Max Temperature is <span id="max_temp"></span></li>
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 ">
+                <h4 class="my-0 fw-normal">Humidity info</h4>
+              </div>
+              <div class="card-body">
+               <h1 class="card-title pricing-card-title"><span id="cloud-pct_2"></span><small class="text-muted fw-light"> %</small></h1> 
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                  <li>Feels Like is <span id="feels_like"></span></li>
+                  <li>Humidity is <span id="humidity"></span></li>
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 ">
+                <h4 class="my-0 fw-normal">Wind info</h4>
+              </div>
+              <div class="card-body">
+                 <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-muted fw-light"> m/s</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  
+                  <li>Wind Speed is <span id="wind_speed"></span></li>
+                  <li>Sunrise time is <span id="sunrise"></span></li>
+                  <li>Sunset time is <span id="sunset"></span></li>
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <h2 class="display-6 text-center mb-4">Weather for other common places </h2>
+    
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%;"></th>
+                <th style="width: 22%;">cloud_pct</th>
+                <th style="width: 22%;">feels_like</th>
+                <th style="width: 22%;">humidity</th>
+                <th style="width: 22%;">max_temp</th>
+                <th style="width: 22%;">min_temp</th>
+                <th style="width: 22%;">sunrise</th>
+                <th style="width: 22%;">sunset</th>
+                <th style="width: 22%;">temp</th>
+                <th style="width: 22%;">wind_degrees</th>
+                <th style="width: 22%;">wind_speed</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row r0" class="text-start">Kolkata</th>
+                <td><svg class="bi c0" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>2</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>3</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>4</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>5</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>6</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>7</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>8</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>9</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>10</td>
+
+              </tr>
+              <tr>
+                <th scope="row r1" class="text-start">Delhi</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>2</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>3</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>4</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>5</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>6</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>7</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>8</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>9</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>10</td>
+
+              </tr>
+            </tbody>
+    
+            <tbody>
+              <tr>
+                <th scope="row r2" class="text-start">Mumbai</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>2</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>3</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>4</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>5</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>6</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>7</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>8</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>9</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>10</td>
+
+              </tr>
+              <tr>
+                <th scope="row r3"  class="text-start">Chennai</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>2</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>3</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>4</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>5</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>6</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>7</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>8</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>9</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>10</td>
+
+              </tr>
+              <tr>
+                <th scope="row r4" class="text-start">Patna</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>2</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>3</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>4</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>5</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>6</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>7</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>8</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>9</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>10</td>
+
+              </tr>
+              <tr>
+                <th scope="row r5" class="text-start">Ranchi</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>1</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>2</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>3</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>4</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>5</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>6</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>7</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>8</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>9</td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>10</td>
+
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </main>
+    
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
